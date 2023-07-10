@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: MacBook Agent
+  name: MacBook Agent
 
 steps:
 - task: Maven@3
