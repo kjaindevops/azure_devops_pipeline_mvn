@@ -9,12 +9,11 @@ trigger:
 pool:
   name: MacBook Agent
 
-steps:
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '1.8'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
+- script: |
+    java -version
+  env:
+    JAVA_HOME: $(JAVA_HOME_8_X64)
+    PATH: $(JAVA_HOME_8_X64)/bin:$(/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home)
 
 - task: Maven@3
   inputs:
