@@ -11,6 +11,13 @@ pool:
 
 steps:
 
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'LocalDirectory'
+    jdkFile: /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/bin
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
