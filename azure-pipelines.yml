@@ -10,6 +10,12 @@ pool:
   name: MacBook Agent
 
 steps:
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '08'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
